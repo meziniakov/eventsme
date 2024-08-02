@@ -1,5 +1,6 @@
 'use client';
-import { EventItem } from 'app/types';
+
+import { EventItem } from '@/app/types';
 import Item from './Item';
 
 export type Props = {
