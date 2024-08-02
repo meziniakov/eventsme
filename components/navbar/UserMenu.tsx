@@ -6,7 +6,6 @@ import useOnClickOutside from '@/hooks/useOnClickOutside';
 import Avatar from './Avatar';
 import MenuItem from './MenuItem';
 import { Menu } from 'lucide-react';
-import usePlaceModal from '@/hooks/usePlaceModal';
 
 const UserMenu = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -17,17 +16,16 @@ const UserMenu = () => {
   }, []);
 
   useOnClickOutside(ref, () => setIsOpen(false));
-  const placeModal = usePlaceModal();
 
   return (
     <div className="relative">
       <div className="z-10 flex flex-row items-center gap-3">
-        <div
+        {/* <div
           onClick={placeModal.onOpen}
           className="hidden cursor-pointer rounded-full px-4 py-3 text-sm font-semibold transition hover:bg-neutral-100 md:block"
         >
           Добавить объект
-        </div>
+        </div> */}
         <div
           onClick={toogleOpen}
           ref={ref}
