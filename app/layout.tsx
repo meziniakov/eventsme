@@ -1,11 +1,14 @@
+import NavBar from '@/components/navbar/NavBar';
 import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
+import ModalProvider from '@/providers/modal-provider';
 
 export const metadata = {
-  title: 'Next.js App Router + NextAuth + Tailwind CSS',
+  title:
+    'Поиск мероприятий для досуга - концерты, выставки, обучения, фестивали, праздники - Eventsme',
   description:
-    'A user admin dashboard configured with Next.js, Postgres, NextAuth, Tailwind CSS, TypeScript, and Prettier.'
+    'Поиск мероприятий по категориям, фильтрам и по местоположению - концерты, выставки, обучения, фестивали, праздники - Eventsme'
 };
 
 export default function RootLayout({
@@ -14,8 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body className="flex min-h-screen w-full flex-col">{children}</body>
+    <html lang="ru">
+      <body className="flex min-h-screen w-full flex-col">
+        <ModalProvider />
+        <NavBar isMain />
+        {children}
+      </body>
       <Analytics />
     </html>
   );
