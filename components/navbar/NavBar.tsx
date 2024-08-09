@@ -1,4 +1,5 @@
 'use client';
+import Container from '../ui/container';
 import Logo from './Logo';
 import Search from './Search';
 import UserMenu from './UserMenu';
@@ -11,13 +12,15 @@ const NavBar: React.FC<NavBarProps> = ({ isMain }) => {
   return (
     <>
       {isMain ? (
-        <div className="fixed z-10 mx-auto w-full bg-white px-4 shadow-sm sm:px-2 md:px-10 xl:px-20">
+        <div className="sticky top-0 z-10 mx-auto w-full bg-white shadow-sm">
           <div className="border-b-[1px] py-4">
-            <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
-              <Logo />
-              <Search />
-              <UserMenu />
-            </div>
+            <Container>
+              <div className="flex flex-row items-center justify-between gap-3 md:gap-0">
+                <Logo />
+                <Search />
+                <UserMenu />
+              </div>
+            </Container>
           </div>
         </div>
       ) : (

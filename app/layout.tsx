@@ -3,6 +3,8 @@ import './globals.css';
 
 import { Analytics } from '@vercel/analytics/react';
 import ModalProvider from '@/providers/modal-provider';
+import { YandexMetricaProvider } from 'next-yandex-metrica';
+import YandexMetrica from '@/providers/yandex-metrica-provider';
 
 export const metadata = {
   title:
@@ -19,9 +21,11 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <body className="flex min-h-screen w-full flex-col">
-        <ModalProvider />
-        <NavBar isMain />
-        {children}
+        <YandexMetrica>
+          <ModalProvider />
+          <NavBar isMain={false} />
+          {children}
+        </YandexMetrica>
       </body>
       <Analytics />
     </html>

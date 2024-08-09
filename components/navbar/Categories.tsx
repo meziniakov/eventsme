@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import CategoryBox from './CategoryBox';
 import { useSearchParams } from 'next/navigation';
+import Container from '../ui/container';
 
 export interface ICategory {
   id: number;
@@ -154,17 +155,21 @@ const Categories = () => {
   const categoryParams = params.get('categories');
 
   return (
-    <div className="flex flex-row items-center justify-between gap-4 overflow-x-auto">
-      {categories.map((category: ICategory) => (
-        <CategoryBox
-          key={category.label}
-          icon={category.icon}
-          label={category.label}
-          // path={category.path}
-          value={category.slug}
-          selected={categoryParams === category.slug}
-        />
-      ))}
+    <div className="sticky top-[74px] z-10 w-full bg-white shadow-sm">
+      <Container>
+        <div className="flex flex-row items-center justify-between gap-4 overflow-x-auto">
+          {categories.map((category: ICategory) => (
+            <CategoryBox
+              key={category.label}
+              icon={category.icon}
+              label={category.label}
+              // path={category.path}
+              value={category.slug}
+              selected={categoryParams === category.slug}
+            />
+          ))}
+        </div>
+      </Container>
     </div>
   );
 };

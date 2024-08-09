@@ -81,8 +81,9 @@ export interface EventItem {
   age_restriction: string | number;
   price: string;
   is_free: string | boolean;
-  location?: Location;
+  location: Location;
   images: EventImage[];
   categories?: string[];
+  tags?: string[];
   short_title: string;
 }

@@ -16,7 +16,7 @@ const Item: React.FC<Props> = ({ item }) => {
   const [isLoading, setLoading] = useState(true);
 
   return (
-    <Link href={`/${item?.slug}-${item?.id}`}>
+    <Link href={`/${item?.slug}-${item.id}`}>
       <div
         className={`${
           isLoading && 'animate-pulse'

@@ -14,8 +14,7 @@ const Logo = () => {
         <span
           className={`${pacifico.className + ' text-fuchsia-900 text-4xl font-extrabold'}`}
         >
-          events
-          <i>me</i>
+          eventsme
         </span>
       </Link>
     </div>
